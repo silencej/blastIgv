@@ -1,0 +1,14 @@
+How to run:
+
+docker compose up -d
+
+# Prepare blast, and generate local shark db
+bash init.sh
+
+cd fe
+npm install
+npm run dev
+
+# Now visit localhost:3000
+
+

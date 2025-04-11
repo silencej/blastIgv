@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  blast:
+    image: ncbi/blast:latest
+    restart: always
+    entrypoint: /bin/bash
+    command: -c "echo 'Running BLAST...'; sleep infinity"
+    volumes:
+    - ./data/blastdb:/blast/blastdb:ro
+    - ./data/blastdb_custom:/blast/blastdb_custom:rw
+    - ./data/fasta:/blast/fasta:ro
+    - ./data/queries:/blast/queries:ro
+    - ./data/results:/blast/results:rw
